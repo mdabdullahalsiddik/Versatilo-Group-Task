@@ -6,12 +6,12 @@ class MemesListModel {
 
   MemesListModel.fromJson(Map<String, dynamic> json) {
     success = json['success'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['success'] = this.success;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['success'] = success;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -28,15 +28,15 @@ class Data {
     if (json['memes'] != null) {
       memes = <Memes>[];
       json['memes'].forEach((v) {
-        memes!.add(new Memes.fromJson(v));
+        memes!.add(Memes.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.memes != null) {
-      data['memes'] = this.memes!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (memes != null) {
+      data['memes'] = memes!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -53,12 +53,12 @@ class Memes {
 
   Memes(
       {this.id,
-        this.name,
-        this.url,
-        this.width,
-        this.height,
-        this.boxCount,
-        this.captions});
+      this.name,
+      this.url,
+      this.width,
+      this.height,
+      this.boxCount,
+      this.captions});
 
   Memes.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -71,14 +71,14 @@ class Memes {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['url'] = this.url;
-    data['width'] = this.width;
-    data['height'] = this.height;
-    data['box_count'] = this.boxCount;
-    data['captions'] = this.captions;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['url'] = url;
+    data['width'] = width;
+    data['height'] = height;
+    data['box_count'] = boxCount;
+    data['captions'] = captions;
     return data;
   }
 }
