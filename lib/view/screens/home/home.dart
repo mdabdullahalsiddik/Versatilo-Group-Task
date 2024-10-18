@@ -20,8 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: SizedBox(
           height: 42,
           child: TextField(
-            onChanged: (value){
-              print("111111111111111");
+            onChanged: (value) {
               controller.searchFun(searchText: value);
             },
             controller: controller.searchController,
@@ -30,13 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 filled: true,
                 hintText: "Search here",
                 suffixIcon: InkWell(
-                  onTap: (){
-                    setState(() {
-                      print("111111111111111");
-                      controller.searchFun(searchText: controller.searchController.text);
-                    }
-                    );
-                  },
+                    onTap: () {
+                      setState(() {
+                        controller.searchFun(
+                            searchText: controller.searchController.text);
+                      });
+                    },
                     child: const Icon(Icons.search)),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20))),
