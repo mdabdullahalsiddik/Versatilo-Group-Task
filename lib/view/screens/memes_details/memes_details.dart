@@ -17,7 +17,10 @@ class MemesDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Memes Details"),
+          title: const Text(
+            "Memes Details",
+            style: TextStyle(color: Colors.white),
+          ),
           centerTitle: true,
           backgroundColor: Colors.deepOrange,
         ),
@@ -26,10 +29,10 @@ class MemesDetails extends StatelessWidget {
             SizedBox(height: Get.height * 0.05),
             Text(
               "${memes?.name}",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             SizedBox(height: Get.height * 0.05),
-            Container(
+            SizedBox(
               height: Get.height * 0.4,
               width: Get.width,
               child: Image.network("${memes?.url}", fit: BoxFit.fill),
@@ -37,7 +40,7 @@ class MemesDetails extends StatelessWidget {
             SizedBox(height: Get.height * 0.05),
             InkWell(
               onTap: () {
-                Get.to(() => EditImage());
+                Get.to(() => const EditImage());
               },
               child: Container(
                 height: Get.height * 0.06,
@@ -45,7 +48,7 @@ class MemesDetails extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.deepOrange,
                     borderRadius: BorderRadius.circular(10)),
-                child: Center(
+                child: const Center(
                     child: Text(
                   "Edit  Image",
                   style: TextStyle(
