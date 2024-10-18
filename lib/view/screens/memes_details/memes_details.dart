@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_1/model/memes_list.dart';
-import 'package:test_1/view/screens/image_edit/image_edit.dart';
+
+import 'package:test_1/view/screens/photo/edit.dart';
 
 class MemesDetails extends StatelessWidget {
   const MemesDetails({
@@ -40,7 +41,7 @@ class MemesDetails extends StatelessWidget {
             SizedBox(height: Get.height * 0.05),
             InkWell(
               onTap: () {
-                Get.to(() => const EditImage());
+                Get.to(() => const PhotoEditorScreen(), arguments: memes?.url);
               },
               child: Container(
                 height: Get.height * 0.06,

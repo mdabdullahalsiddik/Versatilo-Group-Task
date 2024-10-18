@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_1/controller/getx_controller/home.dart';
+import 'package:test_1/controller/ui/home.dart';
 import 'package:test_1/view/screens/memes_details/memes_details.dart';
 
 class HomeScreen extends StatefulWidget {
